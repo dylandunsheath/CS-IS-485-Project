@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import React, { useState } from 'react';
+import MetadataSectionPage from './pages/MetadataSectionPage';
+import PrivacyToolsPage from './pages/PrivacyToolsPage';
+import SocialMediaPage from './pages/SocialMediaPage';
+import MobileSecurityPage from './pages/MobileSecurityPage';
+import { getRiskScore } from './utils/localStorage';
 
-function App() {
-  return (
-    <div className="App">
-      <FormControl>
-  <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-  <RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="female"
-    name="radio-buttons-group"
-  >
-    <FormControlLabel value="female" control={<Radio />} label="Female" />
-    <FormControlLabel value="male" control={<Radio />} label="Male" />
-    <FormControlLabel value="other" control={<Radio />} label="Other" />
-  </RadioGroup>
-</FormControl>
-    </div>
-  );
-}
+const App = () => {
+    const [currentPage, setCurrentPage] = useState(0);
+    const pages = [
+        <MetadataSectionPage onNext={() => setCurrentPage(currentPage + 1)} />,
+        <PrivacyToolsPage onNext={() => setCurrentPage(currentPage + 1)} />,
+        <SocialMediaPage onNext={() => setCurrentPage(currentPage + 1)} />,
+        <MobileSecurityPage onNext={() => setCurrentPage(currentPage + 1)} />,
+    ];
+
+    return (
+        <div className="App">
+            {currentPage < pages.length ? (
+                pages[currentPage]
+            ) : (
+                <div>
+                    <h2>Quiz Completed!</h2>
+                    <p>Your Total Risk Score: {getRiskScore()}</p>
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default App;
