@@ -1,31 +1,36 @@
-import React, { useState } from 'react';
-import MetadataSectionPage from './pages/MetadataSectionPage';
-import PrivacyToolsPage from './pages/PrivacyToolsPage';
-import SocialMediaPage from './pages/SocialMediaPage';
-import MobileSecurityPage from './pages/MobileSecurityPage';
-import { getRiskScore } from './utils/localStorage';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import MetadataSection from "./sections/MetadataSection";
+import PrivacyToolsSection from "./sections/PrivacyToolsSection";
+import SocialMediaSection from "./sections/SocialMediaSection";
+import MobileSecuritySection from "./sections/MobileSecuritySection";
+import Menu from "./components/Menu";
+import { getRiskScore } from "./utils/localStorage";
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState(0);
-    const pages = [
-        <MetadataSectionPage onNext={() => setCurrentPage(currentPage + 1)} />,
-        <PrivacyToolsPage onNext={() => setCurrentPage(currentPage + 1)} />,
-        <SocialMediaPage onNext={() => setCurrentPage(currentPage + 1)} />,
-        <MobileSecurityPage onNext={() => setCurrentPage(currentPage + 1)} />,
-    ];
-
-    return (
-        <div className="App">
-            {currentPage < pages.length ? (
-                pages[currentPage]
-            ) : (
-                <div>
-                    <h2>Quiz Completed!</h2>
-                    <p>Your Total Risk Score: {getRiskScore()}</p>
-                </div>
-            )}
-        </div>
-    );
+  return (
+    <Router>
+      <div className="App">
+        <Menu /> {/* Add the menu */}
+        <Routes>
+          <Route path="/" element={<Navigate to="/metadata" />} />
+          <Route path="/metadata" element={<MetadataSection />} />
+          <Route path="/privacy-tools" element={<PrivacyToolsSection />} />
+          <Route path="/social-media" element={<SocialMediaSection />} />
+          <Route path="/mobile-security" element={<MobileSecuritySection />} />
+          <Route
+            path="/results"
+            element={
+              <div>
+                <h2>Quiz Completed!</h2>
+                <p>Your Total Risk Score: {getRiskScore()}</p>
+              </div>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
