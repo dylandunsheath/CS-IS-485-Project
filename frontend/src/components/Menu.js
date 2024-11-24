@@ -3,6 +3,22 @@ import { NavLink } from "react-router-dom";
 import "../styles/Menu.css";
 
 const Menu = () => {
+
+    const handleStart = () => {
+        const progress = localStorage.getItem("quizProgress");
+        if (progress) {
+          // Ask user if they want to resume or restart
+          if (window.confirm("You have an incomplete quiz. Do you want to resume?")) {
+            navigate(progress);
+            return;
+          } else {
+            localStorage.removeItem("quizProgress");
+          }
+        }
+        navigate("/metadata");
+      };
+
+      
   return (
     <nav className="menu">
       <ul>

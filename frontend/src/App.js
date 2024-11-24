@@ -1,35 +1,56 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import MetadataSection from "./sections/MetadataSection";
-import PrivacyToolsSection from "./sections/PrivacyToolsSection";
-import SocialMediaSection from "./sections/SocialMediaSection";
-import MobileSecuritySection from "./sections/MobileSecuritySection";
-import Menu from "./components/Menu";
-import { getRiskScore } from "./utils/localStorage";
+import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import MenuPage from "./pages/MenuPage";
+import ResultsPage from "./pages/ResultPage.js";
+import FinalizePage from "./pages/FinalizePage.js";
+import QuestionsPage from "./pages/QuestionPage.js";
+import SideMenu from "./components/SideMenu";
+import Navbar from "./components/Navbar";
+import { getQuizProgress } from "./utils/localStorage";
+import "./styles/App.css";
 
 const App = () => {
+  const [questions, setQuestions] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const progress = getQuizProgress();
+
+  useEffect(() => {
+    fetch("/questions.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const allQuestions = data.flatMap((section) =>
+          section.questions.map((q) => ({ ...q, section: section.section }))
+        );
+        setQuestions(allQuestions);
+      });
+  }, []);
+
+  const handleNavigate = (index) => {
+    if (progress.responses[index]) {
+      setMenuOpen(false);
+    }
+  };
+
+  const isQuizActive = progress.currentQuestionIndex < questions.length;
+
   return (
-    <Router>
-      <div className="App">
-        <Menu /> {/* Add the menu */}
-        <Routes>
-          <Route path="/" element={<Navigate to="/metadata" />} />
-          <Route path="/metadata" element={<MetadataSection />} />
-          <Route path="/privacy-tools" element={<PrivacyToolsSection />} />
-          <Route path="/social-media" element={<SocialMediaSection />} />
-          <Route path="/mobile-security" element={<MobileSecuritySection />} />
-          <Route
-            path="/results"
-            element={
-              <div>
-                <h2>Quiz Completed!</h2>
-                <p>Your Total Risk Score: {getRiskScore()}</p>
-              </div>
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+    <div className="mainpage">
+      <Navbar showMenu={isQuizActive} onMenuToggle={() => setMenuOpen(true)} />
+      {isQuizActive && (
+        <SideMenu
+          questions={questions}
+          onNavigate={handleNavigate}
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+        />
+      )}
+      <Routes>
+        <Route path="/" element={<MenuPage />} />
+        <Route path="/quiz" element={<QuestionsPage questions={questions} />} />
+        <Route path="/finalize" element={<FinalizePage questions={questions} />} />
+        <Route path="/results" element={<ResultsPage />} />
+      </Routes>
+    </div>
   );
 };
 

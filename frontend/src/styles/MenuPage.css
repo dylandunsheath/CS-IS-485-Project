@@ -1,0 +1,33 @@
+.menu-page {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .menu-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #001156;
+  }
+  
+  .menu-page p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  .start-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    color: white;
+    background-color: #001156;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .start-button:hover {
+    background-color: #1b2b6d;
+  }
+  

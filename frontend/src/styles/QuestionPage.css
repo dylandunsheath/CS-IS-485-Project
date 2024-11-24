@@ -1,0 +1,11 @@
+.question-holder{
+    margin: 10px 5px 10px 5px;
+    max-width: 80%;   
+    min-width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+.question-page{
+    display: flex;
+    justify-content: center;
+}
