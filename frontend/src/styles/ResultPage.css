@@ -1,35 +1,45 @@
-.results-page {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .results-page h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .results-page ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .results-page li {
-    margin: 5px 0;
-  }
-  
-  .restart-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .restart-button:hover {
-    background-color: #0056b3;
-  }
-  
+.risk-score {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.result-item {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  max-width: 50vw;
+  border: 1px solid #ddd;
+}
+
+.result-item.correct {
+  background-color: #e6ffed;
+  border-color: #6ecf91;
+}
+
+.result-item.incorrect {
+  background-color: #ffe6e6;
+  border-color: #ff6e6e;
+}
+
+.result-item h3 {
+  margin: 5px 0;
+}
+
+.result-item p {
+  margin: 5px 0;
+}
+
+.result-question-review{
+  display:grid;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.your-answer{
+  font-size: smaller;
+}
+.correct-answer{
+  font-size: small;
+}

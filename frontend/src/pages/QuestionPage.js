@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import QuizQuestion from "../components/QuizQuestion";
 import { getQuizProgress } from "../utils/localStorage";
-import { Button , Card} from "@mui/material";
+import { Button , Card, Paper} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "../styles/QuestionPage.css"
 
@@ -27,9 +27,9 @@ const QuestionsPage = ({ questions }) => {
   };
 
   return (
-    <div style={{ padding: "20px" }} className="question-page">
+    <div className="question-page">
       {questions.length > 0 && currentQuestionIndex < questions.length ? (
-        <Card className="question-holder">
+        <Paper className="question-holder" elevation={3}>
           <h2>{questions[currentQuestionIndex].section}</h2>
           <QuizQuestion
             question={questions[currentQuestionIndex]}
@@ -45,7 +45,7 @@ const QuestionsPage = ({ questions }) => {
               Skip to the End
             </Button>
           )}
-        </Card>
+        </Paper>
       ) : null}
     </div>
   );

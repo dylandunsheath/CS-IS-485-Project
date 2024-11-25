@@ -50,7 +50,7 @@ const QuizQuestion = ({ question, index, onNext }) => {
     <div className="quiz-question">
       <FormControl>
         <FormLabel>{question.text}</FormLabel>
-        <RadioGroup value={answer}>
+        <RadioGroup value={answer} className="radio-holder">
           {question.options.map((option, idx) => (
             <Card
               key={idx}
@@ -68,7 +68,6 @@ const QuizQuestion = ({ question, index, onNext }) => {
             </Card>
           ))}
         </RadioGroup>
-        {question.explanation && <p>{question.explanation}</p>}
         <Button variant="contained" className="next-button" onClick={handleSubmit} disabled={!answer}>
           Next
         </Button>
