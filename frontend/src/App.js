@@ -13,6 +13,7 @@ const App = () => {
   const [questions, setQuestions] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const progress = getQuizProgress();
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   useEffect(() => {
     fetch("/questions.json")
@@ -31,7 +32,7 @@ const App = () => {
     }
   };
 
-  const isQuizActive = progress.currentQuestionIndex < questions.length;
+  const isQuizActive = currentQuestionIndex < questions.length;
 
   return (
     <div className="mainpage">
@@ -46,8 +47,8 @@ const App = () => {
       )}
       <Routes>
         <Route path="/" element={<MenuPage />} />
-        <Route path="/quiz" element={<QuestionsPage questions={questions} />} />
-        <Route path="/finalize" element={<FinalizePage questions={questions} />} />
+        <Route path="/quiz" element={<QuestionsPage questions={questions} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} />} />
+        <Route path="/finalize" element={<FinalizePage questions={questions} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </div>

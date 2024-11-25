@@ -83,9 +83,9 @@ const ResultPage = () => {
                   <p>
                     <strong>Points Added:</strong> {chosenOption?.points || 0}
                   </p>
-                  <p>
-                    <strong>Explanation:</strong> {question.explanation}
-                  </p>
+                  <Paper className="explanation-container">
+                    <strong>Explanation:</strong> <div className="question-explanation"> {question.explanation} </div>
+                  </Paper>
                 </div>
               )}
             </Paper>
