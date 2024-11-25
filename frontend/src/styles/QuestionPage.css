@@ -11,3 +11,7 @@
     display: flex;
     justify-content: center;
 }
+
+.quiz-image{
+    max-height: 50vh;
+}

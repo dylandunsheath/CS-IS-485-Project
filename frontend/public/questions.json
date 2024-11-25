@@ -9,7 +9,7 @@
             { "text": "Yes, I understand what metadata is.", "points": 0 },
             { "text": "No, I’m not familiar with it.", "points": 3 }
           ],
-          "explanation": "Metadata can reveal personal information unintentionally. It’s important to remove metadata before sharing files publicly."
+          "explanation": "As the number of shared photos increase, metadata is also being increasingly shared; data that is attached to various forms of content (including photos or images) that can unintentionally reveal individuals’ personal information: when a photo was taken (date and time), where it was taken (which can reveal a pattern), and may even lead to identity theft from hackers or bad entities. It is wise to remove metadata before sharing files publicly."
         },
         {
           "id": "metadata_q2",
@@ -18,7 +18,8 @@
             { "text": "Yes, I always remove metadata.", "points": 0 },
             { "text": "Sometimes, but not always.", "points": 2 },
             { "text": "No, I never remove metadata.", "points": 3 }
-          ]
+          ],
+          "explanation": "As the number of shared photos increase, metadata is also being increasingly shared; data that is attached to various forms of content (including photos or images) that can unintentionally reveal individuals’ personal information: when a photo was taken (date and time), where it was taken (which can reveal a pattern), and may even lead to identity theft from hackers or bad entities. It is wise to remove metadata before sharing files publicly."
         }
       ]
     },
@@ -31,7 +32,8 @@
           "options": [
             { "text": "Yes, I believe that it keeps me completely secure.", "points": 1 },
             { "text": "No, I don’t believe that it keeps me completely secure.", "points": 0 }
-          ]
+          ],
+          "explanation": "Individuals may have a misconception about various privacy tools that are usable in today’s society, which places them at a disadvantage when it comes to security and privacy. It is important to realize that limitations arise with what is protected from Tor Browser, VPNs, and Private Browsing: Private Browsing is wonderful because it protects against local browsing history and cookie storage but it isn't the case outside of your browser; especially since websites or your ISP can still track or see your activity. It also doesn’t provide protection from malware. VPNs or Virtual Private Networks is a tool that can encrypt your internet traffic and mask your IP address which is what websites are able to see. However, it is important to realize that VPNs don't inherently give full anonymity, especially because ISPs are still able to see your VPN connection but not the specific activity. Tor Browser is a browser that anonymizes a user’s web traffic by going through different ‘relays’ and is also great at masking your IP address, but it does not actually prevent all forms of tracking; especially when logging into an account nor does it provide protections outside the browser."
         },
         {
           "id": "privacy_q2",
@@ -40,7 +42,8 @@
             { "text": "I use easy-to-remember passwords (e.g., names, dates).", "points": 3 },
             { "text": "I use a mix of letters, numbers, and symbols.", "points": 1 },
             { "text": "I use a password manager to generate strong, unique passwords.", "points": 0 }
-          ]
+          ],
+          "explanation": "Weak passwords, such as easily guessed ones, put users at a high risk of account compromise. Using a mix of letters, numbers, and symbols offers moderate protection, but using a password manager to generate unique and strong passwords provides the highest level of security by eliminating repetition and the risk of forgetting complex passwords."
         }
       ]
     },
@@ -54,7 +57,8 @@
             { "text": "Never.", "points": 3 },
             { "text": "Yes, I set my privacy options once when creating my account.", "points": 1 },
             { "text": "Regularly, at least once every few months.", "points": 0 }
-          ]
+          ],
+          "explanation": "Regularly updating your privacy settings reduces the risk of exposing personal information to strangers or malicious entities. Notifications and updates from platforms can remind you to check and adjust your privacy settings to ensure better protection of your data"
         },
         {
           "id": "socialmedia_q2",
@@ -71,7 +75,8 @@
           "options": [
             { "text": "Yes, I review and remove unnecessary apps.", "points": 0 },
             { "text": "No, I haven’t checked recently.", "points": 3 }
-          ]
+          ],
+          "explanation": "Connected third-party apps can access your personal data and may pose privacy risks. Regularly reviewing and removing unnecessary apps ensures that only trusted services have access to your information, minimizing the chances of misuse."
         }
       ]
     },
@@ -86,7 +91,8 @@
             { "text": "Grant the permission if it seems necessary.", "points": 1 },
             { "text": "I don’t look into it and grant the permission.", "points": 3 },
             { "text": "Ignore the change and continue using the app.", "points": 3 }
-          ]
+          ],
+          "explanation": "Granting unnecessary app permissions, such as access to your location or microphone, may expose sensitive information. Regularly reviewing app permissions ensures that apps only access what is necessary for functionality, minimizing privacy risks."
         },
         {
           "id": "mobile_q2",
@@ -95,7 +101,8 @@
             { "text": "Yes, always.", "points": 3 },
             { "text": "Sometimes, if I trust the location or device.", "points": 2 },
             { "text": "No, I avoid using this feature on shared devices.", "points": 0 }
-          ]
+          ],
+          "explanation": "Enabling or using the 'Remember Me' or 'Stay Signed In' on a public or shared computer (e.g., a desktop at home or a public computer at a library) is an unwise idea because it poses significant security and privacy risks since it stores your credentials on the computer which will allow others to automatically log into your account during subsequent visits without the usage of a password; enabling or potentially leading to a compromised account."
         },
         {
           "id": "mobile_q3",
@@ -113,7 +120,8 @@
             { "text": "I accept all permissions without checking.", "points": 3 },
             { "text": "I only grant permissions if they seem necessary.", "points": 1 },
             { "text": "I deny all permissions unless I understand why they’re needed.", "points": 0 }
-          ]
+          ],
+          "explanation": "Granting unnecessary permissions, such as access to your location or camera, may expose sensitive information. Regularly reviewing website permissions ensures that websites only access what is necessary for functionality, minimizing privacy risks."
         },
         {
           "id": "mobile_q5",
@@ -121,7 +129,8 @@
           "options": [
             { "text": "I ignore it and proceed without opting out.", "points": 3 },
             { "text": "I check and opt out if possible.", "points": 0 }
-          ]
+          ],
+          "explanation": "Opting out of data collection is a wise idea because it ensures that you are not inadvertently collecting data that may be used for tracking or targeted advertising. It also helps protect your privacy and personal information by reducing the amount of data that is collected and processed by the service."
         },
         {
           "id": "mobile_q6",
@@ -129,7 +138,8 @@
           "options": [
             { "text": "Yes, I update it as soon as updates are available.", "points": 0 },
             { "text": "No, I delay updates or ignore them.", "points": 3 }
-          ]
+          ],
+          "explanation": "Updating your phone’s Operating System (OS) is a huge recommendation from many cybersecurity researchers and experts since there are constantly new security flaws, issues, and bugs discovered that can be exploited by attackers to steal one’s personal information or take control of the device; updating mitigates these issues and ensures a constant safeguard of your security and privacy."
         },
         {
           "id": "mobile_q7",
@@ -137,7 +147,8 @@
           "options": [
             { "text": "Yes, I’ve set up this feature.", "points": 0 },
             { "text": "No, I haven’t enabled this feature.", "points": 3 }
-          ]
+          ],
+          "explanation": "Being able to remotely lock or erase your phone if it is lost or stolen is a wise idea because it helps protect your personal data or information since they are digitally stored on your device: emails, contacts, and messages and also including things like photos or videos and banking details. If it falls into the wrong hands, taking these necessary steps prevents individuals from using it to their advantage."
         },
         {
           "id": "mobile_q8",
@@ -145,7 +156,8 @@
           "options": [
             { "text": "Yes, I leave them on for convenience.", "points": 3 },
             { "text": "No, I turn them off when not needed.", "points": 0 }
-          ]
+          ],
+          "explanation": "Bluetooth connectivity and Bluetooth-enabled devices is a convenient and popular form of wireless communication that can connect to a multitude of devices: laptops, smartphones, printers, and desktops which don’t require a cable to function. However, it is important to realize the security threats that can arise if this setting is enabled on your device. Security intruders are constantly discovering new and more complex ways to intercept the transmission of data signals. Bluetooth has been found to be ranked fourth in terms of the top security concerns. Some concerns include: Virus Infection, BlueBugging, and BluePrinting."
         },
         {
           "id": "mobile_q9",
@@ -153,7 +165,8 @@
           "options": [
             { "text": "Yes, I regularly check and manage app permissions.", "points": 0 },
             { "text": "No, I usually accept all permissions without checking.", "points": 3 }
-          ]
+          ],
+          "explanation": "Granting unnecessary app permissions, such as access to your location or microphone, may expose sensitive information. Regularly reviewing app permissions ensures that apps only access what is necessary for functionality, minimizing privacy risks."
         }
       ]
     },
@@ -168,7 +181,8 @@
             { "text": "Skim it and follow the advice if it seems serious.", "points": 1 },
             { "text": "Ignore it and proceed.", "points": 3 },
             { "text": "Close it without reading.", "points": 3 }
-          ]
+          ],
+          "explanation":"Security warnings are designed to alert users to potential threats. Ignoring them increases vulnerability to malware, phishing, and data theft. Reading and following these warnings helps prevent avoidable risks"
         },
         {
           "id": "security_q2",
@@ -177,7 +191,8 @@
             { "text": "Ignore the warning and continue using the website or app, trusting that everything is likely fine.", "points": 3 },
             { "text": "Google it.", "points": 0 },
             { "text": "Check website FAQ or warning page if available.", "points": 0 }
-          ]
+          ],
+          "explanation": "Ignoring security warnings is a risky practice because it can lead to potential risks such as malware infections, phishing attacks, and data theft. It is recommended to read and follow the security warnings fully and understand the potential risks before proceeding with any action."
         }
       ]
     },
@@ -190,7 +205,8 @@
           "options": [
             { "text": "I open the email and click on the links to complete the task.", "points": 3 },
             { "text": "I delete the email immediately and flag it.", "points": 0 }
-          ]
+          ],
+          "explanation": "Opening links or attachments in phishing emails can lead to malware infections or stolen credentials. Flagging and deleting such emails reduces the risk of falling victim to cyberattacks"
         },
         {
           "id": "behavioral_q2",
@@ -199,7 +215,8 @@
             { "text": "Yes, always.", "points": 3 },
             { "text": "Sometimes, if I trust the location.", "points": 2 },
             { "text": "No, I avoid using this feature on shared devices.", "points": 0 }
-          ]
+          ],
+          "explanation": "Enabling or using the 'Remember Me' or 'Stay Signed In' on a public or shared computer (e.g., a desktop at home or a public computer at a library) is an unwise idea because it poses significant security and privacy risks since it stores your credentials on the computer which will allow others to automatically log into your account during subsequent visits without the usage of a password; enabling or potentially leading to a compromised account."
         }
       ]
     },
@@ -215,7 +232,8 @@
             { "text": "Verifying through email link sent to your inbox", "points": 0 },
             { "text": "Using two-factor authentication (2FA) through a secure app (e.g., Authenticator app or biometric verification)", "points": 0 },
             { "text": "I don’t use any form of account recovery", "points": 3 }
-          ]
+          ],
+          "explanation":"The use of two-factor authentication (2FA) provides the most secure identity verification method. Common security questions or SMS-based recovery are less secure due to risks like SIM swapping or social engineering"
         },
         {
           "id": "account_q2",
@@ -224,7 +242,8 @@
             { "text": "Yes, for most accounts.", "points": 3 },
             { "text": "Yes, but only for less important accounts.", "points": 2 },
             { "text": "No, I use unique passwords for each account.", "points": 0 }
-          ]
+          ],
+          "explanation": "Using the same password across multiple accounts increases the risk of a domino effect in case one account is compromised. Unique passwords ensure that a single breach doesn’t expose all your accounts"
         }
       ]
     }

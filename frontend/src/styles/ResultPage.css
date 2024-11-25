@@ -43,3 +43,11 @@
 .correct-answer{
   font-size: small;
 }
+
+.question-explanation{
+  font-style: italic;
+  color: #333;
+}
+.explanation-container{
+  padding: 3%;
+}
