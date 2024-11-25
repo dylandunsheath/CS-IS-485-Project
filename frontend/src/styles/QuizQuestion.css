@@ -1,0 +1,30 @@
+.quiz-question{
+    margin: 5px;
+    padding: 5px;
+    .question-options{
+        margin: 5px;
+        padding-left: 5px;
+        text-align: left;
+        border: 1px solid #ccc;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+}
+
+  
+  .question-options.selected {
+    border-color: #007bff;
+    background-color: #e6f7ff;
+  }
+  
+  .question-options:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+
+  .radio-holder{
+    margin-bottom: 5vh;
+  }
+  .next-button{
+    margin-top: 5vh;
+  }

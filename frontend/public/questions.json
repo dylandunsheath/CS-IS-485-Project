@@ -1,0 +1,232 @@
+[
+    {
+      "section": "Metadata Awareness",
+      "questions": [
+        {
+          "id": "metadata_q1",
+          "text": "Are you aware of what metadata is?",
+          "options": [
+            { "text": "Yes, I understand what metadata is.", "points": 0 },
+            { "text": "No, I’m not familiar with it.", "points": 3 }
+          ],
+          "explanation": "Metadata can reveal personal information unintentionally. It’s important to remove metadata before sharing files publicly."
+        },
+        {
+          "id": "metadata_q2",
+          "text": "Do you typically remove metadata from your photos before sharing them online?",
+          "options": [
+            { "text": "Yes, I always remove metadata.", "points": 0 },
+            { "text": "Sometimes, but not always.", "points": 2 },
+            { "text": "No, I never remove metadata.", "points": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Privacy Tool Knowledge",
+      "questions": [
+        {
+          "id": "privacy_q1",
+          "text": "Do you believe that using incognito mode, privacy mode, VPN or TOR browser will keep you completely secure?",
+          "options": [
+            { "text": "Yes, I believe that it keeps me completely secure.", "points": 1 },
+            { "text": "No, I don’t believe that it keeps me completely secure.", "points": 0 }
+          ]
+        },
+        {
+          "id": "privacy_q2",
+          "text": "When creating a new password, which option best describes your approach?",
+          "options": [
+            { "text": "I use easy-to-remember passwords (e.g., names, dates).", "points": 3 },
+            { "text": "I use a mix of letters, numbers, and symbols.", "points": 1 },
+            { "text": "I use a password manager to generate strong, unique passwords.", "points": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Social Media Exposure",
+      "questions": [
+        {
+          "id": "socialmedia_q1",
+          "text": "Have you reviewed and updated your privacy settings on social media accounts?",
+          "options": [
+            { "text": "Never.", "points": 3 },
+            { "text": "Yes, I set my privacy options once when creating my account.", "points": 1 },
+            { "text": "Regularly, at least once every few months.", "points": 0 }
+          ]
+        },
+        {
+          "id": "socialmedia_q2",
+          "text": "Are you aware of your social media visibility settings (e.g., public, friends only, private)?",
+          "options": [
+            { "text": "Yes, I’ve configured my settings intentionally.", "points": 0 },
+            { "text": "No, I haven’t checked or adjusted my visibility settings.", "points": 3 }
+          ],
+          "explanation": "Public visibility can expose your posts and personal information to anyone, increasing the risk of identity theft or unwanted attention."
+        },
+        {
+          "id": "socialmedia_q3",
+          "text": "Do you regularly review the apps connected to your social media accounts (e.g., third-party apps using Facebook or Google login)?",
+          "options": [
+            { "text": "Yes, I review and remove unnecessary apps.", "points": 0 },
+            { "text": "No, I haven’t checked recently.", "points": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Mobile and Browser Security Practices",
+      "questions": [
+        {
+          "id": "mobile_q1",
+          "text": "How would you respond if an app that you use frequently suddenly asks for new permissions (e.g., access to microphone or location)?",
+          "options": [
+            { "text": "Check the app’s permissions and reviews to investigate.", "points": 0 },
+            { "text": "Grant the permission if it seems necessary.", "points": 1 },
+            { "text": "I don’t look into it and grant the permission.", "points": 3 },
+            { "text": "Ignore the change and continue using the app.", "points": 3 }
+          ]
+        },
+        {
+          "id": "mobile_q2",
+          "text": "Do you click on ‘Remember Me’ or ‘Stay Signed In’ on public/shared computers?",
+          "options": [
+            { "text": "Yes, always.", "points": 3 },
+            { "text": "Sometimes, if I trust the location or device.", "points": 2 },
+            { "text": "No, I avoid using this feature on shared devices.", "points": 0 }
+          ]
+        },
+        {
+          "id": "mobile_q3",
+          "text": "Do you believe that using Incognito Mode, Privacy Mode, or VPNs keeps you completely secure online?",
+          "options": [
+            { "text": "Yes, I believe they offer complete protection.", "points": 3 },
+            { "text": "No, I understand they offer some privacy but do not guarantee full security.", "points": 0 }
+          ],
+          "explanation": "Incognito mode only prevents local browsing history storage. VPNs and TOR help mask your location but do not protect against all threats."
+        },
+        {
+          "id": "mobile_q4",
+          "text": "When a website asks for permissions (e.g., location, camera, notifications), what do you usually do?",
+          "options": [
+            { "text": "I accept all permissions without checking.", "points": 3 },
+            { "text": "I only grant permissions if they seem necessary.", "points": 1 },
+            { "text": "I deny all permissions unless I understand why they’re needed.", "points": 0 }
+          ]
+        },
+        {
+          "id": "mobile_q5",
+          "text": "When a service offers an option to opt out of data collection, what do you usually do?",
+          "options": [
+            { "text": "I ignore it and proceed without opting out.", "points": 3 },
+            { "text": "I check and opt out if possible.", "points": 0 }
+          ]
+        },
+        {
+          "id": "mobile_q6",
+          "text": "Do you regularly update your phone’s operating system to the latest version?",
+          "options": [
+            { "text": "Yes, I update it as soon as updates are available.", "points": 0 },
+            { "text": "No, I delay updates or ignore them.", "points": 3 }
+          ]
+        },
+        {
+          "id": "mobile_q7",
+          "text": "Can you remotely lock or erase your phone if it’s lost or stolen?",
+          "options": [
+            { "text": "Yes, I’ve set up this feature.", "points": 0 },
+            { "text": "No, I haven’t enabled this feature.", "points": 3 }
+          ]
+        },
+        {
+          "id": "mobile_q8",
+          "text": "Do you always keep your Wi-Fi and Bluetooth turned on, even when not in use?",
+          "options": [
+            { "text": "Yes, I leave them on for convenience.", "points": 3 },
+            { "text": "No, I turn them off when not needed.", "points": 0 }
+          ]
+        },
+        {
+          "id": "mobile_q9",
+          "text": "Are you aware of the permissions requested by the apps on your phone (e.g., location, microphone, contacts)?",
+          "options": [
+            { "text": "Yes, I regularly check and manage app permissions.", "points": 0 },
+            { "text": "No, I usually accept all permissions without checking.", "points": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Response to Security Warnings",
+      "questions": [
+        {
+          "id": "security_q1",
+          "text": "What do you usually do when you see a security warning?",
+          "options": [
+            { "text": "Read it fully and follow the advice.", "points": 0 },
+            { "text": "Skim it and follow the advice if it seems serious.", "points": 1 },
+            { "text": "Ignore it and proceed.", "points": 3 },
+            { "text": "Close it without reading.", "points": 3 }
+          ]
+        },
+        {
+          "id": "security_q2",
+          "text": "If you encounter a security warning that you don’t fully understand or grasp, what would you do?",
+          "options": [
+            { "text": "Ignore the warning and continue using the website or app, trusting that everything is likely fine.", "points": 3 },
+            { "text": "Google it.", "points": 0 },
+            { "text": "Check website FAQ or warning page if available.", "points": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Behavioral Influences and Self-Reported Security Knowledge",
+      "questions": [
+        {
+          "id": "behavioral_q1",
+          "text": "If you receive an email that looks like one above, how do you proceed?",
+          "options": [
+            { "text": "I open the email and click on the links to complete the task.", "points": 3 },
+            { "text": "I delete the email immediately and flag it.", "points": 0 }
+          ]
+        },
+        {
+          "id": "behavioral_q2",
+          "text": "Do you click on ‘Remember Me’ or ‘Stay Signed In’ on public/shared computers?",
+          "options": [
+            { "text": "Yes, always.", "points": 3 },
+            { "text": "Sometimes, if I trust the location.", "points": 2 },
+            { "text": "No, I avoid using this feature on shared devices.", "points": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Account Management",
+      "questions": [
+        {
+          "id": "account_q1",
+          "text": "Which method do you typically rely on for verifying your identity during account recovery?",
+          "options": [
+            { "text": "Using common security questions (e.g., 'What’s your mother’s maiden name?')", "points": 3 },
+            { "text": "Receiving a code via SMS or phone call", "points": 1 },
+            { "text": "Verifying through email link sent to your inbox", "points": 0 },
+            { "text": "Using two-factor authentication (2FA) through a secure app (e.g., Authenticator app or biometric verification)", "points": 0 },
+            { "text": "I don’t use any form of account recovery", "points": 3 }
+          ]
+        },
+        {
+          "id": "account_q2",
+          "text": "Do you use the same password for multiple accounts?",
+          "options": [
+            { "text": "Yes, for most accounts.", "points": 3 },
+            { "text": "Yes, but only for less important accounts.", "points": 2 },
+            { "text": "No, I use unique passwords for each account.", "points": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+  
