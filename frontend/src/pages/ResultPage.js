@@ -42,6 +42,7 @@ const ResultPage = () => {
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
       <h1>Quiz Results</h1>
+      <h3>Lower is Better</h3>
       <h2 className="risk-score">Total Risk Score: {totalRiskScore}</h2>
       <div className="result-question-review">
         {questions.map((question, index) => {

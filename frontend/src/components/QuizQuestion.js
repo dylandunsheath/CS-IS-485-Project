@@ -7,13 +7,16 @@ import {
   Radio,
   Button,
   Card,
-  CardActionArea
+  CardActionArea,
+  Grid2,
+  Alert,
 } from "@mui/material";
 import { saveQuizProgress, getQuizProgress } from "../utils/localStorage";
 import "../styles/QuizQuestion.css";
 
-const QuizQuestion = ({ question, index, onNext }) => {
+const QuizQuestion = ({ question, index, onNext, onBack }) => {
   const [answer, setAnswer] = useState(null);
+  const [showAlert, setShowAlert] = useState(false); // Alert state
   const progress = getQuizProgress();
 
   useEffect(() => {
@@ -24,26 +27,27 @@ const QuizQuestion = ({ question, index, onNext }) => {
 
   const handleCardClick = (optionText) => {
     setAnswer(optionText); // Update the selected answer
-  };
+    setShowAlert(false); // Hide alert if previously shown
 
-  const handleSubmit = () => {
-    if (!answer) return;
-
-    // Check if the answer is correct
-    const isCorrect = question.options.find((opt) => opt.text === answer).points === 0;
-
-    // Save progress
+    // Save answer immediately when selected
+    const isCorrect = question.options.find((opt) => opt.text === optionText).points === 0;
     const updatedProgress = {
       ...progress,
       responses: {
         ...progress.responses,
-        [index]: { answer, isCorrect }
+        [index]: { answer: optionText, isCorrect },
       },
-      currentQuestionIndex: index + 1
+      currentQuestionIndex: index,
     };
-
     saveQuizProgress(updatedProgress);
-    onNext();
+  };
+
+  const handleSubmit = () => {
+    if (!answer) {
+      setShowAlert(true); // Show alert if no option is selected
+      return;
+    }
+    onNext(); // Proceed to the next question
   };
 
   return (
@@ -68,9 +72,31 @@ const QuizQuestion = ({ question, index, onNext }) => {
             </Card>
           ))}
         </RadioGroup>
-        <Button variant="contained" className="next-button" onClick={handleSubmit} disabled={!answer}>
-          Next
-        </Button>
+        {showAlert && ( // Alert message
+          <Alert severity="warning" sx={{ marginTop: "10px" }}>
+            Please select an option before proceeding!
+          </Alert>
+        )}
+        <Grid2 container spacing={2} sx={{ marginTop: "20px" }}>
+          <Grid2 item>
+            <Button
+              variant="outlined"
+              onClick={onBack}
+              disabled={index === 0} // Disable if on the first question
+            >
+              Back
+            </Button>
+          </Grid2>
+          <Grid2 item>
+            <Button
+              variant="contained"
+              className="next-button"
+              onClick={handleSubmit}
+            >
+              Next
+            </Button>
+          </Grid2>
+        </Grid2>
       </FormControl>
     </div>
   );
