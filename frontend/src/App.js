@@ -39,7 +39,7 @@ const App = () => {
 
   return (
     <div className="mainpage">
-      <Navbar showMenu={isQuizActive} onMenuToggle={() => setMenuOpen(true)} />
+      <Navbar showMenu={isQuizActive}  onMenuToggle={() => setMenuOpen(true)} />
       {isQuizActive && (
         <SideMenu
           questions={questions}

@@ -11,17 +11,19 @@ const CookieConsentModal = ({ onAccept, onReject }) => {
         padding: "20px",
         borderRadius: "8px",
         textAlign: "left",
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "rgba(27, 38, 59, 0.95)", // Navy background with opacity
+        color: "#EAECEE", // Light text color
+        animation: "fadeIn 0.5s ease-in",
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: "bold", marginBottom: "10px" }}>
+      <Typography variant="h5" sx={{ fontWeight: "bold", marginBottom: "10px", color: "#EAECEE" }}>
         🍪 We Value Your Privacy
       </Typography>
-      <Typography variant="body1" sx={{ marginBottom: "10px" }}>
-        We use cookies to enhance your experience, analyze site usage, and personalize content. By clicking "Accept All Cookies," 
-        you consent to our use of cookies. Manage your preferences below.
+      <Typography variant="body1" sx={{ marginBottom: "10px", color: "#A5A5A5" }}>
+        We use cookies to enhance your experience, analyze site usage, and personalize content. By clicking
+        "Accept All Cookies," you consent to our use of cookies. Manage your preferences below.
       </Typography>
-      <Divider sx={{ marginY: "15px" }} />
+      <Divider sx={{ marginY: "15px", backgroundColor: "#4C566A" }} />
 
       <Typography variant="subtitle1" sx={{ fontWeight: "bold", marginBottom: "10px" }}>
         Cookie Preferences:
@@ -31,23 +33,27 @@ const CookieConsentModal = ({ onAccept, onReject }) => {
           control={<Switch defaultChecked />}
           label="Essential Cookies (Required)"
           disabled
+          sx={{ color: "#A5A5A5" }}
         />
         <FormControlLabel
-          control={<Switch defaultChecked/>}
+          control={<Switch defaultChecked />}
           label="Performance Cookies"
+          sx={{ color: "#EAECEE" }}
         />
         <FormControlLabel
-          control={<Switch defaultChecked/>}
+          control={<Switch defaultChecked />}
           label="Functional Cookies"
+          sx={{ color: "#EAECEE" }}
         />
         <FormControlLabel
-          control={<Switch defaultChecked/>}
+          control={<Switch defaultChecked />}
           label="Advertising Cookies"
+          sx={{ color: "#EAECEE" }}
         />
       </Box>
-      <Divider sx={{ marginY: "15px" }} />
+      <Divider sx={{ marginY: "15px", backgroundColor: "#4C566A" }} />
       <Box sx={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
-        <Button variant="outlined" onClick={onReject}>
+        <Button variant="outlined" onClick={onReject} sx={{ color: "#EAECEE", borderColor: "#4C566A" }}>
           Reject All
         </Button>
         <Button variant="contained" color="primary" onClick={onAccept}>
