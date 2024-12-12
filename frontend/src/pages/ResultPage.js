@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getQuizProgress, clearQuizProgress } from "../utils/localStorage";
-import "../styles/ResultPage.css";
-import { Divider, Paper } from "@mui/material";
+import { Divider, Paper, Box, Typography, Button, LinearProgress } from "@mui/material";
 
 const ResultPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -39,11 +38,75 @@ const ResultPage = () => {
     navigate("/");
   };
 
+  const getStatusColor = () => {
+    if (totalRiskScore <= 5) return "success.main"; // Very Safe
+    if (totalRiskScore <= 9) return "info.main"; // Safe
+    if (totalRiskScore <= 15) return "warning.main"; // Needs Improvement
+    return "error.main"; // Risky
+  };
+
+  const getStatusLabel = () => {
+    if (totalRiskScore <= 5) return "Very Safe";
+    if (totalRiskScore <= 9) return "Safe";
+    if (totalRiskScore <= 15) return "Needs Improvement";
+    return "Risky";
+  };
+
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Quiz Results</h1>
-      <h2 className="risk-score">Total Risk Score: {totalRiskScore}</h2>
-      <div className="result-question-review">
+    <Box
+      sx={{
+        padding: "20px",
+        textAlign: "center",
+        backgroundColor: "background.default", // Use dark theme background
+        color: "text.primary",
+        gap: "20px",
+        minHeight: "100vh",
+        maxWidth: "100%", // Extend background for full width
+        margin: "0 auto",
+      }}
+    >
+
+      <Typography variant="h4" sx={{ marginBottom: "10px", fontWeight: "bold" }}>
+        Quiz Results
+      </Typography>
+      <Typography variant="subtitle1" sx={{ marginBottom: "20px", color: "text.secondary" }}>
+        Lower is Better
+      </Typography>
+      <Typography
+        variant="h3"
+        className="risk-score"
+        sx={{
+          marginBottom: "10px",
+          color: getStatusColor(),
+          fontWeight: "bold",
+        }}
+      >
+        Total Risk Score: {totalRiskScore}
+      </Typography>
+      <LinearProgress
+        variant="determinate"
+        value={(totalRiskScore / 20) * 100}
+        sx={{
+          height: "10px",
+          borderRadius: "5px",
+          backgroundColor: "background.paper",
+          "& .MuiLinearProgress-bar": {
+            backgroundColor: getStatusColor(),
+          },
+          marginBottom: "20px",
+        }}
+      />
+      <Typography
+        variant="h6"
+        sx={{
+          color: getStatusColor(),
+          fontWeight: "bold",
+          marginBottom: "30px",
+        }}
+      >
+        Status: {getStatusLabel()}
+      </Typography>
+      <Box className="result-question-review" >
         {questions.map((question, index) => {
           const response = progress.responses[index];
           if (!response) return null; // Skip unanswered questions
@@ -56,49 +119,91 @@ const ResultPage = () => {
           return (
             <Paper
               key={index}
-              className={`result-item ${isCorrect ? "correct" : "incorrect"}`}
+              sx={{
+                padding: "15px",
+                backgroundColor: "grey.900", // Dark gray background
+                color: isCorrect ? "success.main" : "error.main", // Text color for readability
+                borderRadius: "8px",
+                textAlign: "left",
+                maxWidth: "900px",
+                margin: "20px auto",
+              }}
             >
-              <h5>
-                Question {index + 1}
-              <br/>
-              {question.text}
-              </h5>
-              <Divider/>
-              <p className="your-answer">
+
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                Question {index + 1}: {question.text}
+              </Typography>
+              <Divider sx={{ marginY: "10px" }} />
+              <Typography variant="body1" sx={{ marginBottom: "10px" }}>
                 <strong>Your Answer:</strong> {response.answer}
-              </p>
+              </Typography>
               {isCorrect ? (
-                <p className="correct">
-                  <strong>Correct!</strong>
-                </p>
+                <Typography
+                variant="body1"
+                sx={{
+                  color: "success.main", 
+                  fontWeight: "bold",
+                }}
+              >
+                Correct!
+              </Typography>
               ) : (
-                <div className="correct-answer">
-                  <p>
-                    <strong>Correct Answer:</strong>{" "}
-                    {
-                      question.options.find((option) => option.points === 0)
-                        ?.text
-                    }
-                  </p>
-                  <p>
+                <Box className="correct-answer" >
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: "error.main", // Red text for incorrect answers
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Correct Answer:{" "}
+                    {question.options.find((option) => option.points === 0)?.text}
+                  </Typography>
+                  <Typography variant="body1" sx={{ marginBottom: "10px" }}>
                     <strong>Points Added:</strong> {chosenOption?.points || 0}
-                  </p>
-                  <Paper className="explanation-container">
-                    <strong>Explanation:</strong> <div className="question-explanation"> {question.explanation} </div>
+                  </Typography>
+                  <Paper
+                    elevation={1}
+                    sx={{
+                      padding: "10px",
+                      backgroundColor: "background.paper",
+                      color: "text.primary",
+                      borderRadius: "6px",
+                    }}
+                  >
+                    <strong>Explanation:</strong>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        marginTop: "5px",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {question.explanation}
+                    </Typography>
                   </Paper>
-                </div>
+                </Box>
               )}
             </Paper>
           );
         })}
-      </div>
-      <button
-        style={{ padding: "10px 20px", fontSize: "16px", marginTop: "20px" }}
+      </Box>
+      <Button
+        variant="contained"
+        sx={{
+          padding: "10px 20px",
+          marginTop: "20px",
+          fontSize: "16px",
+          backgroundColor: "primary.main",
+          "&:hover": {
+            backgroundColor: "primary.dark",
+          },
+        }}
         onClick={handleRestart}
       >
         Restart Quiz
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 };
 

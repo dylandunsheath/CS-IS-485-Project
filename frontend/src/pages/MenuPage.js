@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/MenuPage.css";
+import { Button, Box, Typography, Paper } from "@mui/material";
 
 const MenuPage = () => {
   const navigate = useNavigate();
@@ -10,16 +10,66 @@ const MenuPage = () => {
   };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Welcome to the Cybersecurity Quiz</h1>
-      <p>Test your cybersecurity awareness and learn how to stay safe online!</p>
-      <button
-        style={{ padding: "10px 20px", fontSize: "16px", marginTop: "20px" }}
-        onClick={handleStart}
+    <Box
+      sx={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "-100px",
+        backgroundColor: "black", // Dark theme background
+        color: "white", // Light text color for contrast
+        padding: "20px",
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          maxWidth: "900px",
+          width: "100%",
+          padding: "40px",
+          backgroundColor: "#1a1a1a", // Dark gray for container
+          textAlign: "center",
+          borderRadius: "16px",
+        }}
       >
-        Start Quiz
-      </button>
-    </div>
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+            color: "#00bcd4", // Accent color (cyan)
+            marginBottom: "20px",
+          }}
+        >
+          Welcome to the Cybersecurity Quiz
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "#ccc", // Slightly lighter gray for description text
+            marginBottom: "30px",
+          }}
+        >
+          Test your cybersecurity awareness and learn how to stay safe online!
+        </Typography>
+        <Button
+          variant="contained"
+          sx={{
+            padding: "12px 24px",
+            fontSize: "18px",
+            fontWeight: "bold",
+            backgroundColor: "#004d79", // Navy blue button
+            color: "white",
+            "&:hover": {
+              backgroundColor: "#007bb5", // Lighter blue on hover
+            },
+          }}
+          onClick={handleStart}
+        >
+          Start Quiz
+        </Button>
+      </Paper>
+    </Box>
   );
 };
 

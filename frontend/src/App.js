@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom"; // Add useNavigate
 import MenuPage from "./pages/MenuPage";
 import ResultsPage from "./pages/ResultPage.js";
 import FinalizePage from "./pages/FinalizePage.js";
@@ -15,6 +15,8 @@ const App = () => {
   const progress = getQuizProgress();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
+  const navigate = useNavigate(); // Define navigate
+
   useEffect(() => {
     fetch("/questions.json")
       .then((res) => res.json())
@@ -26,29 +28,49 @@ const App = () => {
       });
   }, []);
 
-  const handleNavigate = (index) => {
-    if (progress.responses[index]) {
-      setMenuOpen(false);
-    }
+  const handleNavigate = (globalIndex) => {
+    setCurrentQuestionIndex(globalIndex); // Set the global index
+    setMenuOpen(false); // Close the side menu
   };
+  
+  
 
   const isQuizActive = currentQuestionIndex < questions.length;
 
   return (
     <div className="mainpage">
-      <Navbar showMenu={isQuizActive} onMenuToggle={() => setMenuOpen(true)} />
+      <Navbar showMenu={isQuizActive}  onMenuToggle={() => setMenuOpen(true)} />
       {isQuizActive && (
         <SideMenu
           questions={questions}
-          onNavigate={handleNavigate}
+          onNavigate={handleNavigate} // Pass handleNavigate to SideMenu
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
+          progress={progress} // Pass progress to SideMenu
         />
       )}
       <Routes>
         <Route path="/" element={<MenuPage />} />
-        <Route path="/quiz" element={<QuestionsPage questions={questions} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} />} />
-        <Route path="/finalize" element={<FinalizePage questions={questions} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} />} />
+        <Route
+          path="/quiz"
+          element={
+            <QuestionsPage
+              questions={questions}
+              currentQuestionIndex={currentQuestionIndex}
+              setCurrentQuestionIndex={setCurrentQuestionIndex}
+            />
+          }
+        />
+        <Route
+          path="/finalize"
+          element={
+            <FinalizePage
+              questions={questions}
+              currentQuestionIndex={currentQuestionIndex}
+              setCurrentQuestionIndex={setCurrentQuestionIndex}
+            />
+          }
+        />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </div>
